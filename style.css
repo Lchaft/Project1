@@ -42,20 +42,33 @@ h1 {
     color: forestgreen;
     font-weight: 500;
     padding-top: 100px;
+    opacity: 0.5;
 }
 
 .question_counter, .question_points {
-
+    color: whitesmoke;
+    padding: 0 15px;
+    width: 20%;
 }
 
 .question_counter {
-
+    text-align: center;
 }
 
 .section2 {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .answer {
-
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 15px;
+    margin: auto;
+    background: whitesmoke;
+    color: forestgreen;
+    opacity: 0.5;
 }
