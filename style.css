@@ -2,12 +2,6 @@ html,body {
     min-height: 100%;
 }
 
-
-h1 {
-    font-weight: bold;
-    color: blue;
-}
-
 body {
     background-image: url("lemuel-butler-515.jpg");
     background-size: cover;
@@ -17,3 +11,42 @@ body {
     font-family: fantasy;
 }
 
+h1 {
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+}
+
+.container {
+    width: 750px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.row {
+    
+}
+
+.section1 {
+
+}
+
+.question_field {
+
+}
+
+.question_counter, .question_points {
+
+}
+
+.question_counter {
+
+}
+
+.section2 {
+
+}
+
+.answer {
+    
+}
