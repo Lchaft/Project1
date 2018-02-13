@@ -26,6 +26,18 @@ var rightAnswer = 0
 var questionsAnswered = 0 
 
 
+// Creating the game class 
+
+class TriviaGame {
+    constructor() {
+
+    }
+
+
+}
+
+
+
 
 
 
