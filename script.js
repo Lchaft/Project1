@@ -17,9 +17,13 @@ var points = document.querySelector('#section1 .question_points')
 
 var questionNumber = document.querySelector('#section1 .question_counter')
 
+var questionPicker = []
 
+var questionCount = 0
 
+var rightAnswer = 0
 
+var questionsAnswered = 0 
 
 
 
