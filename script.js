@@ -1,3 +1,37 @@
+// Defining game variables: 
+
+
+var questionField = document.querySelector('#question_field')
+
+var answer1 = document.querySelector('#section2 .answer1')
+
+var answer2 = document.querySelector('#section2 .answer2')
+
+var answer3 = document.querySelector('#section2 .answer3')
+
+var answer4 = document.querySelector('#section2 .answer4')
+
+var answerSection = document.querySelector('.section2')
+
+var points = document.querySelector('#section1 .question_points')
+
+var questionNumber = document.querySelector('#section1 .question_counter')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // All quiz questions below:
 
 const questions = [
