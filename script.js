@@ -134,7 +134,7 @@ const questions = [
   }
 ]
 
-// Setting up quiz function, adding in questions and answers:
+// Setting up quiz function, adding in questions and answers and event listener:
 // questionCount++
 function startQuiz () {
   document.getElementById('question_field').innerHTML = questions[questionCount].question
@@ -153,9 +153,15 @@ answer4.addEventListener('click', selectAnswer)
 function selectAnswer () {
     // console.log(questions[questionCount].correctAnswer)
     // console.log(this.innerHTML)
-  if (this.innerHTML === questions[questionCount].correctAnswer)
-    alert 
+    // console.log('i clicked you')
+    if (this.innerHTML === questions[questionCount].correctAnswer) {
+    // rightAnswer++
+    // questionCount++
+    // alert ('Correct!')
+    }
 }
+
+startQuiz()
 
 // Calling function to start quiz:
 startQuiz()
