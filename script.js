@@ -1,7 +1,5 @@
-// Defining game variables: 
-
-
-var questionField = document.querySelector('.question_field')
+// Defining game variables:
+var questionField = document.getElementById('question_field')
 
 var answer1 = document.querySelector('#section2 .answer1')
 
@@ -23,131 +21,124 @@ var questionCount = 0
 
 var rightAnswer = 0
 
-var questionsAnswered = 0 
-
-
-
-// Setting up quiz function, pushing questions  
-
-function startQuiz () {
-questionField.innerHTML = questions[0].question1
-}
-
-
-// Calling function
-startQuiz();
-
-
-
+var questionsAnswered = 0
 
 // All quiz questions below:
 
 const questions = [
 
-{
-    question1: "How many species of lions are there?",
+  {
+    question1: 'How many species of lions are there?',
     answers: {
-        a: "What's a lion?",
-        b: "Four",
-        c: "Three",
-        d: "One",
+      a: 'What is a lion?',
+      b: 'Four',
+      c: 'Three',
+      d: 'One'
     },
-    correctAnswer: "d"
-},
+    correctAnswer: 'd'
+  },
 
-{
-    question2: "What do lions eat?",
+  {
+    question2: 'What do lions eat?',
     answers: {
-        a: "My ex best friend",
-        b:  "Zebras",
-        c:  "Rhinos",
-        d:  "Avocado toast, duh",
+      a: 'My ex best friend',
+      b: 'Zebras',
+      c: 'Rhinos',
+      d: 'Avocado toast, duh'
     },
-    correctAnswer: "a"
-},
+    correctAnswer: 'a'
+  },
 
-{
+  {
     question3: "What's the best Disney movie?",
     answers: {
-        a: "Beauty and the Beast",
-        b: "Cinderella",
-        c: "The Lion King",
-        d: "Mulan",
+      a: 'Beauty and the Beast',
+      b: 'Cinderella',
+      c: 'The Lion King',
+      d: 'Mulan'
     },
-    correctAnswer: "c"
-},
+    correctAnswer: 'c'
+  },
 
-{
+  {
     question4: "Was the song 'Circle of Life' my alarm clock for 6 months?",
     answers: {
-        a: "Yas",
-        b: "Are you crazy?!",
-        c: "Nope",
-        d: "Maybe for one week...",
+      a: 'Yas',
+      b: 'Are you crazy?!',
+      c: 'Nope',
+      d: 'Maybe for one week...'
     },
-    correctAnswer: "a"
-},
+    correctAnswer: 'a'
+  },
 
-{
-    question5: "This song was also in the Lion King",
+  {
+    question5: 'This song was also in the Lion King',
     answers: {
-        a: "Under the Sea",
-        b: "Can you Feel the Love Tonight",
-        c: "I'll Make a Man out of You",
-        d: "You'll be in my Heart"
+      a: 'Under the Sea',
+      b: 'Can you Feel the Love Tonight',
+      c: "I'll Make a Man out of You",
+      d: "You'll be in my Heart"
     },
-    correctAnswer: "b"
-},
+    correctAnswer: 'b'
+  },
 
-{
-    question6: "Outside of Africa lions live in...",
+  {
+    question6: 'Outside of Africa lions live in...',
     answers: {
-        a: "Iran",
-        b: "Afghanistan",
-        c: "Russia",
-        d: "India",
+      a: 'Iran',
+      b: 'Afghanistan',
+      c: 'Russia',
+      d: 'India'
     },
-    correctAnswer: "d"
-},
-
-    question7: "What does Hakuna Matata mean?",
+    correctAnswer: 'd'
+  },
+  {
+    question7: 'What does Hakuna Matata mean?',
     answers: {
-        a: "Huh?",
-        b: "It's a problem free philosophy",
-        c: "No worries",
-        d: "It's chill bro",
+      a: 'Huh?',
+      b: "It's a problem free philosophy",
+      c: 'No worries',
+      d: "It's chill bro"
     },
-    correctAnswer: "c"
-},
-
-    question8: "The average lifespan of a wild lion is...",
+    correctAnswer: 'c'
+  },
+  {
+    question8: 'The average lifespan of a wild lion is...',
     answers: {
-        a: "5-10 years",
-        b: "10-15 years",
-        c: "15-20 years",
-        d: "20-25 years",
+      a: '5-10 years',
+      b: '10-15 years',
+      c: '15-20 years',
+      d: '20-25 years'
     },
-    correctAnswer: "c"
-},
-
+    correctAnswer: 'c'
+  },
+  {
     question9: "Simba just can't wait to...",
     answers: {
-        a: "Take a nap",
-        b: "Hang out with Nala",
-        c: "Sing some songs",
-        d: "Be king",
+      a: 'Take a nap',
+      b: 'Hang out with Nala',
+      c: 'Sing some songs',
+      d: 'Be king'
     },
-    correctAnswer: "d"
-},
+    correctAnswer: 'd'
+  },
 
-{
-    question10: "Which other wild cat has a mane, aside from the lion?",
+  {
+    question10: 'Which other wild cat has a mane, aside from the lion?',
     answers: {
-        a: "My house cat is wild does that count?",
-        b: "No other cats are as cool lions",
-        c: "Jaguar",
-        d: "Mountain Lion",
+      a: 'My house cat is wild does that count?',
+      b: 'No other cats are as cool lions',
+      c: 'Jaguar',
+      d: 'Mountain Lion'
     },
-    correctAnswer: "b"
-}
+    correctAnswer: 'b'
+  }
 ]
+
+// Setting up quiz function, pushing questions:
+function startQuiz () {
+  document.getElementById('question_field').innerHTML = questions[0].question1
+}
+
+// Calling function:
+startQuiz()
