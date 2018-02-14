@@ -17,11 +17,11 @@ var questionNumber = document.querySelector('.question_counter')
 
 var questionPicker = []
 
-var questionCount = 0
+var questionCount = 1
 
 var rightAnswer = 0
 
-var questionsAnswered = 0
+// var questionsAnswered = 0
 
 // All quiz questions below:
 
@@ -34,7 +34,7 @@ const questions = [
       c: 'Three',
       d: 'One'
     },
-    correctAnswer: 'd'
+    correctAnswer: 'One'
   },
 
   {
@@ -45,7 +45,7 @@ const questions = [
       c: 'Rhinos',
       d: 'Avocado toast, duh'
     },
-    correctAnswer: 'a'
+    correctAnswer: 'My ex best friend'
   },
 
   {
@@ -56,7 +56,7 @@ const questions = [
       c: 'The Lion King',
       d: 'Mulan'
     },
-    correctAnswer: 'c'
+    correctAnswer: 'The Lion King'
   },
 
   {
@@ -67,7 +67,7 @@ const questions = [
       c: 'Nope',
       d: 'Maybe for one week...'
     },
-    correctAnswer: 'a'
+    correctAnswer: 'Yas'
   },
 
   {
@@ -78,7 +78,7 @@ const questions = [
       c: "I'll Make a Man out of You",
       d: "You'll be in my Heart"
     },
-    correctAnswer: 'b'
+    correctAnswer: 'Can you Feel the Love Tonight'
   },
 
   {
@@ -89,7 +89,7 @@ const questions = [
       c: 'Russia',
       d: 'India'
     },
-    correctAnswer: 'd'
+    correctAnswer: 'India'
   },
   {
     question: 'What does Hakuna Matata mean?',
@@ -99,7 +99,7 @@ const questions = [
       c: 'No worries',
       d: "It's chill bro"
     },
-    correctAnswer: 'c'
+    correctAnswer: 'No worries'
   },
   {
     question: 'The average lifespan of a wild lion is...',
@@ -109,7 +109,7 @@ const questions = [
       c: '15-20 years',
       d: '20-25 years'
     },
-    correctAnswer: 'c'
+    correctAnswer: '15-20 years'
   },
   {
     question: "Simba just can't wait to...",
@@ -119,23 +119,23 @@ const questions = [
       c: 'Sing some songs',
       d: 'Be king'
     },
-    correctAnswer: 'd'
+    correctAnswer: 'Be king'
   },
 
   {
     question: 'Which other wild cat has a mane, aside from the lion?',
     answers: {
       a: 'My house cat is wild does that count?',
-      b: 'No other cats are as cool lions',
+      b: 'No other cats are as cool as lions',
       c: 'Jaguar',
       d: 'Mountain Lion'
     },
-    correctAnswer: 'b'
+    correctAnswer: 'No other cats are as cool as lions'
   }
 ]
 
 // Setting up quiz function, adding in questions and answers and event listener:
-// questionCount++
+
 function startQuiz () {
   document.getElementById('question_field').innerHTML = questions[questionCount].question
   document.querySelector('.answer1').innerHTML = questions[questionCount].answers.a
@@ -151,17 +151,14 @@ answer4.addEventListener('click', selectAnswer)
 
 
 function selectAnswer () {
-    // console.log(questions[questionCount].correctAnswer)
-    // console.log(this.innerHTML)
-    // console.log('i clicked you')
     if (this.innerHTML === questions[questionCount].correctAnswer) {
-    // rightAnswer++
-    // questionCount++
-    // alert ('Correct!')
-    }
+        questionCount++
+        rightAnswer++
+      document.querySelector('.question_counter').innerHTML = questionCount
+      document.querySelector('.question_points').innerHTML = rightAnswer
+      startQuiz()
+    } else  {alert('false') }
 }
-
-startQuiz()
 
 // Calling function to start quiz:
 startQuiz()
