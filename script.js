@@ -1,19 +1,19 @@
 // Defining game variables:
 var questionField = document.getElementById('question_field')
 
-var answer1 = document.querySelector('#section2 .answer1')
+var answer1 = document.querySelector('.answer1')
 
-var answer2 = document.querySelector('#section2 .answer2')
+var answer2 = document.querySelector('.answer2')
 
-var answer3 = document.querySelector('#section2 .answer3')
+var answer3 = document.querySelector('.answer3')
 
-var answer4 = document.querySelector('#section2 .answer4')
+var answer4 = document.querySelector('.answer4')
 
 var answerSection = document.querySelector('.section2')
 
-var points = document.querySelector('#section1 .question_points')
+var points = document.querySelector('.question_points')
 
-var questionNumber = document.querySelector('#section1 .question_counter')
+var questionNumber = document.querySelector('.question_counter')
 
 var questionPicker = []
 
@@ -26,9 +26,8 @@ var questionsAnswered = 0
 // All quiz questions below:
 
 const questions = [
-
   {
-    question1: 'How many species of lions are there?',
+    question: 'How many species of lions are there?',
     answers: {
       a: 'What is a lion?',
       b: 'Four',
@@ -39,7 +38,7 @@ const questions = [
   },
 
   {
-    question2: 'What do lions eat?',
+    question: 'What do lions eat?',
     answers: {
       a: 'My ex best friend',
       b: 'Zebras',
@@ -50,7 +49,7 @@ const questions = [
   },
 
   {
-    question3: "What's the best Disney movie?",
+    question: "What's the best Disney movie?",
     answers: {
       a: 'Beauty and the Beast',
       b: 'Cinderella',
@@ -61,7 +60,7 @@ const questions = [
   },
 
   {
-    question4: "Was the song 'Circle of Life' my alarm clock for 6 months?",
+    question: "Was the song 'Circle of Life' my alarm clock for 6 months?",
     answers: {
       a: 'Yas',
       b: 'Are you crazy?!',
@@ -72,7 +71,7 @@ const questions = [
   },
 
   {
-    question5: 'This song was also in the Lion King',
+    question: 'This song was also in the Lion King',
     answers: {
       a: 'Under the Sea',
       b: 'Can you Feel the Love Tonight',
@@ -83,7 +82,7 @@ const questions = [
   },
 
   {
-    question6: 'Outside of Africa lions live in...',
+    question: 'Outside of Africa lions live in...',
     answers: {
       a: 'Iran',
       b: 'Afghanistan',
@@ -93,7 +92,7 @@ const questions = [
     correctAnswer: 'd'
   },
   {
-    question7: 'What does Hakuna Matata mean?',
+    question: 'What does Hakuna Matata mean?',
     answers: {
       a: 'Huh?',
       b: "It's a problem free philosophy",
@@ -103,7 +102,7 @@ const questions = [
     correctAnswer: 'c'
   },
   {
-    question8: 'The average lifespan of a wild lion is...',
+    question: 'The average lifespan of a wild lion is...',
     answers: {
       a: '5-10 years',
       b: '10-15 years',
@@ -113,7 +112,7 @@ const questions = [
     correctAnswer: 'c'
   },
   {
-    question9: "Simba just can't wait to...",
+    question: "Simba just can't wait to...",
     answers: {
       a: 'Take a nap',
       b: 'Hang out with Nala',
@@ -124,7 +123,7 @@ const questions = [
   },
 
   {
-    question10: 'Which other wild cat has a mane, aside from the lion?',
+    question: 'Which other wild cat has a mane, aside from the lion?',
     answers: {
       a: 'My house cat is wild does that count?',
       b: 'No other cats are as cool lions',
@@ -135,10 +134,33 @@ const questions = [
   }
 ]
 
-// Setting up quiz function, pushing questions:
+// Setting up quiz function, adding in questions and answers:
+// questionCount++
 function startQuiz () {
-  document.getElementById('question_field').innerHTML = questions[0].question1
+  document.getElementById('question_field').innerHTML = questions[questionCount].question
+  document.querySelector('.answer1').innerHTML = questions[questionCount].answers.a
+  document.querySelector('.answer2').innerHTML = questions[questionCount].answers.b
+  document.querySelector('.answer3').innerHTML = questions[questionCount].answers.c
+  document.querySelector('.answer4').innerHTML = questions[questionCount].answers.d
 }
 
-// Calling function:
+answer1.addEventListener('click', selectAnswer)
+answer2.addEventListener('click', selectAnswer)
+answer3.addEventListener('click', selectAnswer)
+answer4.addEventListener('click', selectAnswer)
+
+
+function selectAnswer () {
+    // console.log(questions[questionCount].correctAnswer)
+    // console.log(this.innerHTML)
+  if (this.innerHTML === questions[questionCount].correctAnswer)
+    alert 
+}
+
+// Calling function to start quiz:
 startQuiz()
+
+
+// When user clicks answer, if clicked answer matches correctAnswer, score++
+// Then move to next question --> questionCount++
+// call startQuiz()
