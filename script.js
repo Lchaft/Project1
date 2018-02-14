@@ -1,7 +1,7 @@
 // Defining game variables: 
 
 
-var questionField = document.querySelector('#question_field')
+var questionField = document.querySelector('.question_field')
 
 var answer1 = document.querySelector('#section2 .answer1')
 
@@ -26,24 +26,16 @@ var rightAnswer = 0
 var questionsAnswered = 0 
 
 
-// Creating the game class 
 
-class TriviaGame {
-    constructor() {
+// Setting up quiz function, pushing questions  
 
-    }
-
-
+function startQuiz () {
+questionField.innerHTML = questions[0].question1
 }
 
 
-
-
-
-
-
-
-
+// Calling function
+startQuiz();
 
 
 
