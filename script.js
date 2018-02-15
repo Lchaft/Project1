@@ -17,14 +17,13 @@ var questionNumber = document.querySelector('.question_counter')
 
 var questionPicker = []
 
-var questionCount = 1
+var questionCount = 0
 
 var rightAnswer = 0
 
-// var questionsAnswered = 0
+var questionsCounted = 1
 
 // All quiz questions below:
-
 const questions = [
   {
     question: 'How many species of lions are there?',
@@ -135,7 +134,6 @@ const questions = [
 ]
 
 // Setting up quiz function, adding in questions and answers and event listener:
-
 function startQuiz () {
   document.getElementById('question_field').innerHTML = questions[questionCount].question
   document.querySelector('.answer1').innerHTML = questions[questionCount].answers.a
@@ -149,21 +147,21 @@ answer2.addEventListener('click', selectAnswer)
 answer3.addEventListener('click', selectAnswer)
 answer4.addEventListener('click', selectAnswer)
 
-
+// Creating game logic so question count and game points update:
 function selectAnswer () {
     if (this.innerHTML === questions[questionCount].correctAnswer) {
         questionCount++
+        questionsCounted++
         rightAnswer++
-      document.querySelector('.question_counter').innerHTML = questionCount
+      document.querySelector('.question_counter').innerHTML = questionsCounted + "/10"
       document.querySelector('.question_points').innerHTML = rightAnswer
-      startQuiz()
-    } else  {alert('false') }
+      if (questionCount < questions.length) {
+        startQuiz()
+    } else {
+        {alert ('Game Over!') 
+    }
+    }} else {alert('false') }
 }
 
 // Calling function to start quiz:
 startQuiz()
-
-
-// When user clicks answer, if clicked answer matches correctAnswer, score++
-// Then move to next question --> questionCount++
-// call startQuiz()
