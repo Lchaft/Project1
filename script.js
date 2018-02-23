@@ -1,3 +1,10 @@
++// You'll want to wrap all of the below JavaScript in an immediately-invoked function expression (IIFE) - e.g.:
++// (function () {
++//   // All of your code goes here
++// })()
+
+// Great comments describing each section of your code!
+
 // Defining game variables:
 var questionField = document.getElementById('question_field')
 
@@ -22,6 +29,9 @@ var questionCount = 0
 var rightAnswer = 0
 
 var questionsCounted = 1
+
+// To keep this file less cluttered and busy, you could consider creating another js file and put this whole question array below in it.
+// Just link the js file with the questions into the HTML file first, then link the other js file.
 
 // All quiz questions below:
 const questions = [
@@ -140,19 +150,18 @@ function startQuiz () {
   document.querySelector('.answer2').innerHTML = questions[questionCount].answers.b
   document.querySelector('.answer3').innerHTML = questions[questionCount].answers.c
   document.querySelector('.answer4').innerHTML = questions[questionCount].answers.d
-}
 
-answer1.addEventListener('click', selectAnswer)
-answer2.addEventListener('click', selectAnswer)
-answer3.addEventListener('click', selectAnswer)
-answer4.addEventListener('click', selectAnswer)
+}
 
 // Creating game logic so question count and game points update:
 function selectAnswer () {
     if (this.innerHTML === questions[questionCount].correctAnswer) {
         questionCount++
-        questionsCounted++
         rightAnswer++
+      // once you answer the last question, the total goes to '11/10', so you could put an if statement around the questionsCounted incrementer:
+      if (questionsCounted < 10) {
+        questionsCounted++
+      }
       document.querySelector('.question_counter').innerHTML = questionsCounted + "/10"
       document.querySelector('.question_points').innerHTML = rightAnswer
       if (questionCount < questions.length) {
@@ -162,6 +171,28 @@ function selectAnswer () {
     }
     }} else {alert('false') }
 }
+// ^^ Try to think about how you could break up the logic in selectAnswer into more functions,
+// so that one function isn't such a large block of code.
 
 // Calling function to start quiz:
 startQuiz()
+
+// Best practice is to put event listeners at the bottom of your JS file:
+
+// It would be more efficient to put an event listener on the parent container of the answer elements (class "section2").
+// Then to see which answer was selected, you could use the evt.target in the function below.
+answer1.addEventListener('click', selectAnswer)
+answer2.addEventListener('click', selectAnswer)
+answer3.addEventListener('click', selectAnswer)
+answer4.addEventListener('click', selectAnswer)
+
+// To create a timer, you can use the setInterval() function
+// It can be tricky to use at first (documentation here: https://www.w3schools.com/jsref/met_win_setinterval.asp):
+// First declare a variable to hold the time:
+  // var gameTimer
+// Then create a function in which you set the timer equal to the setInterval function:
+  // gameTimer = setInterval(function () {
+  //   timer--
+  // }, 1000)
+// Then create a function that can be called to stop the timer. That function will
+  // clearInterval(gameTimer)
