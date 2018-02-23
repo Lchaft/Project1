@@ -1,7 +1,4 @@
-html,body {
-    min-height: 100%;
-}
-
+/* just apply overall styling to body, not html */
 body {
     background-image: url("lemuel-butler-515.jpg");
     background-size: cover;
@@ -9,6 +6,8 @@ body {
     background-repeat: no-repeat;
     font-size: 30px;
     font-family: fantasy;
+    /* typically, after your chosen font, you'll want to also list a font family as back-up in case the browser doesn't support 'fantasy' */
+    min-height: 100%
 }
 
 h1 {
@@ -77,3 +76,9 @@ h1 {
     font-weight: bold;
     padding: 3%;
 }
+
+/* To better space out your answer boxes, you can increase the margin around each  ‘answer’ class.
+To more uniformly space them within their container, I might suggest using CSS grid
+ (e.g. the answer boxes could form a rectangle with one answer in each corner).  
+To make your site more responsive, you could set your widths to percentages or use the ‘em’ unit 
+(more on that here: https://www.w3schools.com/cssref/css_units.asp), instead of a fixed amount of pixels. */
